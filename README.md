@@ -40,6 +40,12 @@ Then run:
 ports-monitor --help
 ```
 
+Shortcut alias:
+
+```bash
+pm --help
+```
+
 ## Local Development
 
 From this repo:
