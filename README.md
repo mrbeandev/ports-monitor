@@ -1,12 +1,24 @@
 # ports-monitor
 
-`ports-monitor` is a cross-platform Node.js CLI to:
+[![npm version](https://img.shields.io/npm/v/ports-monitor.svg)](https://www.npmjs.com/package/ports-monitor)
+[![npm downloads](https://img.shields.io/npm/dm/ports-monitor.svg)](https://www.npmjs.com/package/ports-monitor)
+[![license](https://img.shields.io/npm/l/ports-monitor.svg)](./LICENSE)
 
-- inspect currently open ports,
-- filter them quickly,
-- stop the owning process(es).
+`ports-monitor` is a cross-platform Node.js CLI to find open ports, filter them fast, and stop the owning process.
+
+- Check open ports on Linux, macOS, and Windows
+- Filter by port, PID, protocol, process, address, or search query
+- Kill a process by port (or by PID) with graceful-first behavior
+- Use either script-friendly flags or an interactive terminal view
 
 Supports Linux, macOS, and Windows.
+
+## Why ports-monitor
+
+- Works across Linux, macOS, and Windows with one command
+- Fast for day-to-day dev tasks like "what is using port 3000?"
+- Safe stop flow: graceful first, then force only when needed
+- Useful for local debugging, CI agents, and remote servers
 
 ## Install
 
@@ -64,6 +76,32 @@ Interactive mode:
 ports-monitor interactive
 ```
 
+## Common Tasks
+
+Find what process is using a specific port:
+
+```bash
+ports-monitor list --port 3000
+```
+
+Kill whatever is running on a specific port:
+
+```bash
+ports-monitor stop --port 3000 --yes
+```
+
+Kill by PID:
+
+```bash
+ports-monitor stop --pid 1234 --yes
+```
+
+Preview stop targets without killing:
+
+```bash
+ports-monitor stop --port 3000 --dry-run --yes --json
+```
+
 ## Commands
 
 ### `list`
@@ -86,3 +124,9 @@ Simple terminal loop with live refresh, free-text filtering, and stop actions.
 - On Linux, the CLI uses `ss` first and falls back to `netstat`.
 - On macOS, the CLI uses `lsof`.
 - On Windows, the CLI uses `netstat` and `tasklist`.
+
+## Links
+
+- npm: https://www.npmjs.com/package/ports-monitor
+- GitHub: https://github.com/mrbeandev/ports-monitor
+- Website: https://mrbean.dev

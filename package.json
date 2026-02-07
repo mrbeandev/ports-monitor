@@ -1,15 +1,28 @@
 {
   "name": "ports-monitor",
   "version": "1.0.0",
-  "description": "Cross-platform CLI to inspect, filter, and stop open ports",
+  "description": "Find open ports, filter results, and kill processes by port on Linux, macOS, and Windows",
   "keywords": [
     "ports",
+    "open ports",
+    "port monitor",
+    "port scanner",
+    "port checker",
+    "check open ports",
+    "find open ports",
+    "kill port",
+    "free port",
+    "pid",
+    "process",
     "network",
     "cli",
     "monitor",
     "lsof",
     "netstat",
-    "ss"
+    "ss",
+    "windows",
+    "linux",
+    "macos"
   ],
   "type": "module",
   "files": [
